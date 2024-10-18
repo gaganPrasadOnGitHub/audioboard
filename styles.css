@@ -38,6 +38,7 @@ main {
   width: 100%;
   resize: none;
   padding: 16px;
+  line-height: 2;
   cursor: pointer;
   border-radius: 8px;
   color: var(--text-color);
