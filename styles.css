@@ -1,0 +1,227 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #f5f5f5;
+}
+
+main {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#message {
+  resize: none;
+  width: 100%;
+  padding: 16px;
+  cursor: pointer;
+  color: #f5f5f5;
+  max-width: 1200px;
+  border-radius: 8px;
+  background: #1d1d1d;
+  border: 3px solid #444;
+}
+
+button,
+#message:focus-visible {
+  outline: none;
+}
+
+.button-container {
+  gap: 24px;
+  display: flex;
+  margin: 24px 0;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+button {
+  padding: 16px;
+  background: #1d1d1d;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #f5f5f5;
+  cursor: pointer;
+  border: 2px solid #444;
+  transition: all ease-in-out 300ms;
+}
+
+button:hover {
+  translate: 0 2px;
+}
+
+.checkbox-wrapper {
+  gap: 8px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.checkbox-holder {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background: #1d1d1d;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  margin-left: 8px;
+}
+
+.checkbox-holder::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  background: #444;
+  border-radius: 50%;
+  transition: all ease-in-out 300ms;
+}
+
+input[type='checkbox']:checked + .checkbox-holder::before {
+  transform: translateX(40px);
+  background: yellowgreen;
+}
+
+.keyboard {
+  margin: 0 auto;
+  position: relative;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: #1d1d1d;
+  border-radius: 8px;
+  border: 3px solid #444;
+}
+
+.key {
+  display: flex;
+  gap: 4px;
+  width: 60px;
+  height: 60px;
+  background: #666;
+  color: #f5f5f5;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: default;
+  transition: all ease-in-out 200ms;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.key.active {
+  background-color: #333;
+  transform: translateY(2px);
+}
+
+.arrow-keys {
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.arrows-bottom {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-key {
+  height: 28px;
+}
+
+.caps-lock-status {
+  width: 6px;
+  height: 6px;
+  background: #f5f5f5;
+  align-self: start;
+  margin: 0 8px;
+  border-radius: 50%;
+}
+
+.key.active .caps-lock-status {
+  background: yellowgreen;
+}
+
+.backspace {
+  width: 120px;
+}
+
+.command {
+  width: 80px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+.py-8 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}

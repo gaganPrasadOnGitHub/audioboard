@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Audioboard</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <textarea id="message" rows="10" placeholder="Write a message"></textarea>
+      </div>
+      <div class="button-container">
+        <button id="textToVoice">Message to speech</button>
+        <button id="clearMessage">Clear Message</button>
+
+        <label for="audioCheckbox" class="checkbox-wrapper">
+          <span id="audioText">Disable</span> audio feedback
+          <input type="checkbox" name="isAudioEnable" id="audioCheckbox" value="Audio" checked />
+          <span class="checkbox-holder"></span>
+        </label>
+      </div>
+      <div class="keyboard">
+        <!-- 1sr row -->
+        <div class="row">
+          <div class="key col" data-key="Backquote"><span>~</span><span>`</span></div>
+          <div class="key col" data-key="Digit1"><span>!</span><span>1</span></div>
+          <div class="key col" data-key="Digit2"><span>@</span><span>2</span></div>
+          <div class="key col" data-key="Digit3"><span>#</span><span>3</span></div>
+          <div class="key col" data-key="Digit4"><span>$</span><span>4</span></div>
+          <div class="key col" data-key="Digit5"><span>%</span><span>5</span></div>
+          <div class="key col" data-key="Digit6"><span>^</span><span>6</span></div>
+          <div class="key col" data-key="Digit7"><span>&amp;</span><span>7</span></div>
+          <div class="key col" data-key="Digit8"><span>*</span><span>8</span></div>
+          <div class="key col" data-key="Digit9"><span>(</span><span>9</span></div>
+          <div class="key col" data-key="Digit0"><span>)</span><span>0</span></div>
+          <div class="key col" data-key="Minus"><span>_</span><span>-</span></div>
+          <div class="key col" data-key="Equal"><span>+</span><span>=</span></div>
+          <div
+            class="key flex-grow text-small backspace align-end justify-end"
+            data-key="Backspace"
+          >
+            <span class="right bottom p-8">delete</span>
+          </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row">
+          <div class="key flex-grow text-small align-end justify-start" data-key="Tab">
+            <span class="p-8">tab</span>
+          </div>
+          <div class="key" data-key="KeyQ">Q</div>
+          <div class="key" data-key="KeyW">W</div>
+          <div class="key" data-key="KeyE">E</div>
+          <div class="key" data-key="KeyR">R</div>
+          <div class="key" data-key="KeyT">T</div>
+          <div class="key" data-key="KeyY">Y</div>
+          <div class="key" data-key="KeyU">U</div>
+          <div class="key" data-key="KeyI">I</div>
+          <div class="key" data-key="KeyO">O</div>
+          <div class="key" data-key="KeyP">P</div>
+          <div class="key col" data-key="BracketLeft"><span>{</span><span>[</span></div>
+          <div class="key col" data-key="BracketRight"><span>}</span><span>]</span></div>
+          <div class="key col" data-key="Backslash"><span>|</span><span>\</span></div>
+        </div>
+        <!-- 3rd row -->
+        <div class="row">
+          <div class="key text-small col align-start justify-around flex-grow" data-key="CapsLock">
+            <span class="caps-lock-status"></span><span class="py-8">caps lock</span>
+          </div>
+          <div class="key" data-key="KeyA">A</div>
+          <div class="key" data-key="KeyS">S</div>
+          <div class="key" data-key="KeyD">D</div>
+          <div class="key" data-key="KeyF">F</div>
+          <div class="key" data-key="KeyG">G</div>
+          <div class="key" data-key="KeyH">H</div>
+          <div class="key" data-key="KeyJ">J</div>
+          <div class="key" data-key="KeyK">K</div>
+          <div class="key" data-key="KeyL">L</div>
+          <div class="key col" data-key="Semicolon"><span>:</span><span>;</span></div>
+          <div class="key col" data-key="Quote"><span>&quot;</span><span>&apos;</span></div>
+          <div class="key flex-grow text-small align-end justify-end" data-key="Enter">
+            <span class="p-8">return</span>
+          </div>
+        </div>
+        <!-- 4th row -->
+        <div class="row">
+          <div class="key flex-grow text-small align-end justify-start" data-key="ShiftLeft">
+            <span class="p-8">shift</span>
+          </div>
+          <div class="key" data-key="KeyZ">Z</div>
+          <div class="key" data-key="KeyX">X</div>
+          <div class="key" data-key="KeyC">C</div>
+          <div class="key" data-key="KeyV">V</div>
+          <div class="key" data-key="KeyB">B</div>
+          <div class="key" data-key="KeyN">N</div>
+          <div class="key" data-key="KeyM">M</div>
+          <div class="key col" data-key="Comma"><span>&lt;</span><span>,</span></div>
+          <div class="key col" data-key="Period"><span>&gt;</span><span>.</span></div>
+          <div class="key col" data-key="Slash"><span>?</span><span>/</span></div>
+          <div class="key flex-grow text-small align-end justify-end" data-key="ShiftRight">
+            <span class="p-8">shift</span>
+          </div>
+        </div>
+        <!-- 5th row -->
+        <div class="row">
+          <div class="key text-small col align-end justify-around" data-key="ControlLeft">
+            <span class="py-8">^</span><span class="py-8">control</span>
+          </div>
+          <div class="key col text-small align-end justify-around" data-key="AltLeft">
+            <span class="py-8">alt</span><span class="py-8">option</span>
+          </div>
+          <div class="key text-small col command align-end justify-around" data-key="MetaLeft">
+            <span class="py-8">⌘</span><span class="py-8">command</span>
+          </div>
+          <div class="key flex-grow" data-key="Space"></div>
+          <div class="key text-small col command align-start justify-around" data-key="MetaRight">
+            <span class="py-8">⌘</span><span class="py-8">command</span>
+          </div>
+          <div class="key col text-small align-start justify-around" data-key="AltRight">
+            <span class="py-8">alt</span><span class="py-8">option</span>
+          </div>
+          <div class="arrow-keys">
+            <div class="key arrow-key text-small" data-key="ArrowUp">▲</div>
+            <div class="arrows-bottom">
+              <div class="key arrow-key text-small" data-key="ArrowLeft">◀</div>
+              <div class="key arrow-key text-small" data-key="ArrowDown">▼</div>
+              <div class="key arrow-key text-small" data-key="ArrowRight">▶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
