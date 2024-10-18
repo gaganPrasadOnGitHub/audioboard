@@ -1,3 +1,13 @@
+:root {
+  --bg-key: #666;
+  --bg-color: #000;
+  --bg-active-key: #333;
+  --bg-secondary: #1d1d1d;
+  --text-color: #f5f5f5;
+  --border-color: #444;
+  --color-active: greenyellow;
+}
+
 *,
 *::after,
 *::before {
@@ -7,33 +17,32 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   overflow: hidden;
-  background: #000;
-  color: #f5f5f5;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-family: Arial, sans-serif;
 }
 
 main {
-  position: relative;
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
 }
 
 #message {
-  resize: none;
   width: 100%;
+  resize: none;
   padding: 16px;
   cursor: pointer;
-  color: #f5f5f5;
-  max-width: 1200px;
   border-radius: 8px;
-  background: #1d1d1d;
-  border: 3px solid #444;
+  color: var(--text-color);
+  background: var(--bg-secondary);
+  border: 3px solid var(--border-color);
 }
 
 button,
@@ -43,22 +52,22 @@ button,
 
 .button-container {
   gap: 24px;
+  width: 100%;
   display: flex;
   margin: 24px 0;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
 }
 
 button {
   padding: 16px;
-  background: #1d1d1d;
-  border-radius: 8px;
   font-size: 14px;
-  color: #f5f5f5;
   cursor: pointer;
-  border: 2px solid #444;
+  border-radius: 8px;
+  color: var(--text-color);
+  background: var(--bg-secondary);
   transition: all ease-in-out 300ms;
+  border: 2px solid var(--border-color);
 }
 
 button:hover {
@@ -67,8 +76,8 @@ button:hover {
 
 .checkbox-wrapper {
   gap: 8px;
-  margin-left: auto;
   display: flex;
+  margin-left: auto;
   align-items: center;
   justify-content: center;
 }
@@ -78,77 +87,81 @@ input[type='checkbox'] {
 }
 
 .checkbox-holder {
-  position: relative;
-  display: inline-block;
   width: 80px;
   height: 40px;
-  background: #1d1d1d;
-  border-radius: 40px;
   cursor: pointer;
-  transition: all ease-in-out 300ms;
   margin-left: 8px;
+  position: relative;
+  border-radius: 40px;
+  display: inline-block;
+  background: var(--bg-secondary);
+  transition: all ease-in-out 300ms;
 }
 
 .checkbox-holder::before {
   content: '';
-  position: absolute;
   top: 4px;
   left: 4px;
   width: 32px;
   height: 32px;
-  background: #444;
+  position: absolute;
   border-radius: 50%;
+  background: var(--border-color);
   transition: all ease-in-out 300ms;
 }
 
 input[type='checkbox']:checked + .checkbox-holder::before {
   transform: translateX(40px);
-  background: yellowgreen;
+  background: var(--color-active);
 }
 
 .keyboard {
-  margin: 0 auto;
-  position: relative;
-  max-width: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   gap: 8px;
   padding: 8px;
-  background: #1d1d1d;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1000px;
   border-radius: 8px;
-  border: 3px solid #444;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 3px solid var(--border-color);
+}
+
+.text-small {
+  font-size: 14px;
 }
 
 .key {
-  display: flex;
   gap: 4px;
   width: 60px;
   height: 60px;
-  background: #666;
-  color: #f5f5f5;
+  display: flex;
+  cursor: default;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  cursor: default;
+  background: var(--bg-key);
   transition: all ease-in-out 200ms;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .key.active {
-  background-color: #333;
+  background: var(--bg-active-key);
   transform: translateY(2px);
 }
 
 .arrow-keys {
   gap: 2px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 }
-.arrows-bottom {
+
+.arrow-keys-group {
   gap: 8px;
   display: flex;
   align-items: center;
@@ -162,14 +175,14 @@ input[type='checkbox']:checked + .checkbox-holder::before {
 .caps-lock-status {
   width: 6px;
   height: 6px;
-  background: #f5f5f5;
-  align-self: start;
   margin: 0 8px;
+  align-self: start;
   border-radius: 50%;
+  background: var(--text-color);
 }
 
 .key.active .caps-lock-status {
-  background: yellowgreen;
+  background: var(--color-active);
 }
 
 .backspace {
@@ -183,39 +196,16 @@ input[type='checkbox']:checked + .checkbox-holder::before {
 .p-8 {
   padding: 8px;
 }
+
 .py-8 {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.text-small {
-  font-size: 14px;
-}
-
-.align-start {
-  align-items: flex-start;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
 .row {
+  gap: 8px;
   width: 100%;
   display: flex;
-  gap: 8px;
 }
 
 .col {
@@ -224,4 +214,24 @@ input[type='checkbox']:checked + .checkbox-holder::before {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
